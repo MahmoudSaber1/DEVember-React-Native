@@ -8,7 +8,7 @@ interface DayListItemProps {
 export const DayListItem = ({ day }: DayListItemProps) => {
     return (
         <Link
-            href={`/${day}`}
+            href={`/day/${day}`}
             asChild>
             <Pressable style={styles.box}>
                 <Text style={styles.text}>{day}</Text>
