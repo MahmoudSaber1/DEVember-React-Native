@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 const DayDetailsScreen = () => {
     const { id } = useLocalSearchParams();
     const day2 = id === "2" ? id : "";
+    const day3 = id === "3" ? id : "";
 
     return (
         <View style={styles.page}>
@@ -15,6 +16,11 @@ const DayDetailsScreen = () => {
                 btnName="Go to Onboarding"
                 href="onboarding"
                 day={day2}
+            />
+            <LinkItem
+                btnName="Go to Markdown Render content"
+                href="markdown"
+                day={day3}
             />
         </View>
     );
