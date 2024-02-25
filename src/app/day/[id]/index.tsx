@@ -1,19 +1,21 @@
-import { Link, Stack, useLocalSearchParams } from "expo-router";
-import { Button, StyleSheet, Text, View } from "react-native";
+import LinkItem from "@/components/link-item";
+import { Stack, useLocalSearchParams } from "expo-router";
+import { StyleSheet, Text, View } from "react-native";
 
 const DayDetailsScreen = () => {
     const { id } = useLocalSearchParams();
+    const day2 = id === "2" ? id : "";
 
     return (
         <View style={styles.page}>
             <Stack.Screen options={{ title: `Day ${id}: Onboarding` }} />
             <Text style={styles.title}>Day {id} Details</Text>
 
-            <Link
-                href={`/day/onboarding`}
-                asChild>
-                <Button title="Go to Onboarding" />
-            </Link>
+            <LinkItem
+                btnName="Go to Onboarding"
+                href="onboarding"
+                day={day2}
+            />
         </View>
     );
 };
