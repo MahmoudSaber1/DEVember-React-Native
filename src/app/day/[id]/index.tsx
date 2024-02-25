@@ -6,6 +6,7 @@ const DayDetailsScreen = () => {
     const { id } = useLocalSearchParams();
     const day2 = id === "2" ? id : "";
     const day3 = id === "3" ? id : "";
+    const day4 = id === "4" ? id : "";
 
     return (
         <View style={styles.page}>
@@ -21,6 +22,11 @@ const DayDetailsScreen = () => {
                 btnName="Go to Markdown Render content"
                 href="markdown"
                 day={day3}
+            />
+            <LinkItem
+                btnName="Go to Animated Splash Screen"
+                href="splash"
+                day={day4}
             />
         </View>
     );
