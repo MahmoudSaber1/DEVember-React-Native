@@ -18,12 +18,12 @@ const Markdown = () => {
                 <Pressable
                     onPress={() => setTab("edit")}
                     style={[markdownStyle.tab, { borderColor: tab === "edit" ? "mediumorchid" : "gray" }]}>
-                    <Text style={markdownStyle.tabText}>Edit</Text>
+                    <Text style={[markdownStyle.tabText, { color: tab === "edit" ? "mediumorchid" : "gray" }]}>Edit</Text>
                 </Pressable>
                 <Pressable
                     onPress={() => setTab("preview")}
                     style={[markdownStyle.tab, { borderColor: tab === "preview" ? "mediumorchid" : "gray" }]}>
-                    <Text style={markdownStyle.tabText}>Preview</Text>
+                    <Text style={[markdownStyle.tabText, { color: tab === "preview" ? "mediumorchid" : "gray" }]}>Preview</Text>
                 </Pressable>
             </View>
 
