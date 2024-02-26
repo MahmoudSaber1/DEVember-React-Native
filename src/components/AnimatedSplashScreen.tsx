@@ -1,17 +1,12 @@
-import { Stack } from "expo-router";
 import React, { useRef } from "react";
-import { StatusBar, View } from "react-native";
+import { View } from "react-native";
 
 import LottieView from "lottie-react-native";
 import Animated, { ZoomOut } from "react-native-reanimated";
 
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
-type AnimatedSplashScreenProps = {
-    onAnimationFinish?: (isCancelled: boolean) => void;
-};
-
-const AnimatedSplashScreen = ({ onAnimationFinish = () => {} }: AnimatedSplashScreenProps) => {
+const AnimatedSplashScreen = ({ onAnimationFinish = () => {} }: { onAnimationFinish?: (isCancelled: boolean) => void }) => {
     const animation = useRef<LottieView>(null);
 
     return (
@@ -22,11 +17,6 @@ const AnimatedSplashScreen = ({ onAnimationFinish = () => {} }: AnimatedSplashSc
                 justifyContent: "center",
                 backgroundColor: "black",
             }}>
-            <Stack.Screen options={{ headerShown: false }} />
-            <StatusBar
-                barStyle="light-content"
-                backgroundColor="black"
-            />
             <AnimatedLottieView
                 exiting={ZoomOut}
                 ref={animation}
@@ -34,8 +24,8 @@ const AnimatedSplashScreen = ({ onAnimationFinish = () => {} }: AnimatedSplashSc
                 loop={false}
                 autoPlay
                 style={{
-                    width: "80%",
-                    maxWidth: 400,
+                    width: 500,
+                    maxWidth: 500,
                 }}
                 // Find more Lottie files at https://lottiefiles.com/featured
                 source={require("@/assets/lottie/netflix.json")}
