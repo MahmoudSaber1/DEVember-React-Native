@@ -7,7 +7,7 @@ import { Stack } from "expo-router";
 import { useFonts, Inter_900Black, Inter_600SemiBold, Inter_400Regular, Inter_700Bold } from "@expo-google-fonts/inter";
 import { AmaticSC_400Regular, AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
 import AnimatedSplashScreen from "@/components/AnimatedSplashScreen";
-// import Animated, { FadeIn } from "react-native-reanimated";
+import Animated, { FadeIn } from "react-native-reanimated";
 
 // SplashScreen.preventAutoHideAsync();
 
@@ -47,12 +47,16 @@ export default function RootLayout() {
 
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <Stack screenOptions={{ headerStyle: { backgroundColor: "#F9EDE3" } }}>
-                <Stack.Screen
-                    name="index"
-                    options={{ title: "Home Page" }}
-                />
-            </Stack>
+            <Animated.View
+                style={{ flex: 1 }}
+                entering={FadeIn}>
+                <Stack screenOptions={{ headerStyle: { backgroundColor: "#F9EDE3" } }}>
+                    <Stack.Screen
+                        name="index"
+                        options={{ title: "Home Page" }}
+                    />
+                </Stack>
+            </Animated.View>
         </GestureHandlerRootView>
     );
 }

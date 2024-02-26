@@ -1,8 +1,9 @@
+import { Stack } from "expo-router";
 import React, { useRef } from "react";
 import { StatusBar, View } from "react-native";
+
 import LottieView from "lottie-react-native";
 import Animated, { ZoomOut } from "react-native-reanimated";
-import { Stack } from "expo-router";
 
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
