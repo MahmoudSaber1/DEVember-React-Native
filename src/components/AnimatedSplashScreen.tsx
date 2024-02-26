@@ -19,13 +19,13 @@ const AnimatedSplashScreen = ({ onAnimationFinish = () => {} }: { onAnimationFin
             }}>
             <AnimatedLottieView
                 exiting={ZoomOut}
-                ref={animation}
                 onAnimationFinish={onAnimationFinish}
-                loop={false}
+                ref={animation}
                 autoPlay
+                loop={false}
                 style={{
                     width: 500,
-                    maxWidth: 500,
+                    height: 500,
                 }}
                 // Find more Lottie files at https://lottiefiles.com/featured
                 source={require("@/assets/lottie/netflix.json")}

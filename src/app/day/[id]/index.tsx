@@ -7,6 +7,7 @@ const DayDetailsScreen = () => {
     const day2 = id === "2" ? id : "";
     const day3 = id === "3" ? id : "";
     const day4 = id === "4" ? id : "";
+    const day5 = id === "5" ? id : "";
 
     return (
         <View style={styles.page}>
@@ -27,6 +28,11 @@ const DayDetailsScreen = () => {
                 btnName="Go to Animated Splash Screen"
                 href="splash-screen"
                 day={day4}
+            />
+            <LinkItem
+                btnName="Go to AirBNB Map"
+                href="airbnb-maps"
+                day={day5}
             />
         </View>
     );
