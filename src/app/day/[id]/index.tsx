@@ -8,6 +8,8 @@ const DayDetailsScreen = () => {
     const day3 = id === "3" ? id : "";
     const day4 = id === "4" ? id : "";
     const day5 = id === "5" ? id : "";
+    const day6 = id === "6" ? id : "";
+    const day7 = id === "7" ? id : "";
 
     return (
         <View style={styles.page}>
@@ -33,6 +35,11 @@ const DayDetailsScreen = () => {
                 btnName="Go to AirBNB Map"
                 href="airbnb-maps"
                 day={day5}
+            />
+            <LinkItem
+                btnName="Go to Voice Memos"
+                href="memos"
+                day={day7}
             />
         </View>
     );
