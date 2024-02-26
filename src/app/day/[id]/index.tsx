@@ -25,7 +25,7 @@ const DayDetailsScreen = () => {
             />
             <LinkItem
                 btnName="Go to Animated Splash Screen"
-                href="splash"
+                href="splash-screen"
                 day={day4}
             />
         </View>

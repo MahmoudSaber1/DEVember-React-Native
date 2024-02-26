@@ -1,15 +1,20 @@
-import { useEffect } from "react";
-import { ActivityIndicator } from "react-native";
+import { useEffect, useState } from "react";
+// import { ActivityIndicator } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
+// import * as SplashScreen from "expo-splash-screen";
 import { useFonts, Inter_900Black, Inter_600SemiBold, Inter_400Regular, Inter_700Bold } from "@expo-google-fonts/inter";
 import { AmaticSC_400Regular, AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
+import AnimatedSplashScreen from "@/components/AnimatedSplashScreen";
+// import Animated, { FadeIn } from "react-native-reanimated";
 
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+    const [appReady, setAppReady] = useState(false);
+    const [splashAnimationFinished, setSplashAnimationFinished] = useState(false);
+
     const [fontsLoaded, fontError] = useFonts({
         InterRegular: Inter_400Regular,
         InterSemibold: Inter_600SemiBold,
@@ -22,11 +27,22 @@ export default function RootLayout() {
 
     useEffect(() => {
         if (fontsLoaded || fontError) {
-            SplashScreen.hideAsync();
+            // SplashScreen.hideAsync();
+            setAppReady(true);
         }
     }, [fontsLoaded, fontError]);
-    if (!fontsLoaded && !fontError) {
-        return <ActivityIndicator />;
+
+    const showAnimatedSplash = !appReady || !splashAnimationFinished;
+    if (showAnimatedSplash) {
+        return (
+            <AnimatedSplashScreen
+                onAnimationFinish={(isCancelled) => {
+                    if (!isCancelled) {
+                        setSplashAnimationFinished(true);
+                    }
+                }}
+            />
+        );
     }
 
     return (
