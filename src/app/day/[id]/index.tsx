@@ -8,8 +8,8 @@ const DayDetailsScreen = () => {
     const day3 = id === "3" ? id : "";
     const day4 = id === "4" ? id : "";
     const day5 = id === "5" ? id : "";
-    const day6 = id === "6" ? id : "";
     const day7 = id === "7" ? id : "";
+    const day9 = id === "9" ? id : "";
 
     return (
         <View style={styles.page}>
@@ -40,6 +40,11 @@ const DayDetailsScreen = () => {
                 btnName="Go to Voice Memos"
                 href="memos"
                 day={day7}
+            />
+            <LinkItem
+                btnName="Go to Authentication"
+                href="auth/sign-in"
+                day={day9}
             />
         </View>
     );
